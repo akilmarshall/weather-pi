@@ -1,9 +1,10 @@
 [Unit]
-Description=Run the wallpaper-update.service at midnight
+Description=Update weather database with environmental readings every 5 minutes.
 
 [Timer]
-OnActiveSec=360
+OnUnitActiveSec=5min
 Persistent=true
+Unit=weather-database-update.service
 
 [Install]
 WantedBy=timers.target
