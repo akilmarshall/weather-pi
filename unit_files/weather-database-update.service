@@ -1,0 +1,7 @@
+[Unit]
+Description=Update the database with current weather measurements
+
+[Service]
+Type=oneshot
+ExecStart=~/weather-pi/update_database
+User=pi

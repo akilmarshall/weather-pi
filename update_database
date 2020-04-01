@@ -13,12 +13,34 @@ def insert_temperature(session):
     temp = Temperature(temperature=bme.bme['temperature'])
     session.add(temp)
 
+def insert_humidity(session):
+    temp = Humidity(humidity=bme.bme['humidity'])
+    session.add(temp)
+
+def insert_pressure(session):
+    temp = Pressure(pressure=bme.bme['pressure'])
+    session.add(temp)
+
+def insert_pm10(session):
+    temp = PM10(pm10=particle.particle['PM1.0'])
+    session.add(temp)
+
+def insert_pm25(session):
+    temp = PM25(pm25=particle.particle['PM2.5'])
+    session.add(temp)
+
+def insert_pm100(session):
+    temp = PM100(pm100=particle.particle['PM10.0'])
+    session.add(temp)
+
 
 if __name__ == '__main__':
     SESSION = Session()
 
-    # populate_format(SESSION)  # populate the FORMAT table
-    # populate_rest(SESSION)  # populate the rest of the tables
-
     insert_temperature(SESSION)
+    insert_humidity(SESSION)
+    insert_pressure(SESSION)
+    insert_pm10(SESSION)
+    insert_pm25(SESSION)
+    insert_pm100(SESSION)
     SESSION.commit()
