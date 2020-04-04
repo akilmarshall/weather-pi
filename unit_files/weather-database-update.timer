@@ -2,9 +2,8 @@
 Description=Update weather database with environmental readings every 5 minutes.
 
 [Timer]
-OnUnitActiveSec=5min
-Persistent=true
-Unit=weather-database-update.service
+OnUnitActiveSec=300s
+OnBootSec=30s
 
 [Install]
 WantedBy=timers.target
