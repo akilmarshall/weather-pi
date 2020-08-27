@@ -34,13 +34,12 @@ def insert_pm100(session):
     session.add(temp)
 
 
-if __name__ == '__main__':
-    SESSION = Session()
+SESSION = Session()
 
-    insert_temperature(SESSION)
-    insert_humidity(SESSION)
-    insert_pressure(SESSION)
-    insert_pm10(SESSION)
-    insert_pm25(SESSION)
-    insert_pm100(SESSION)
-    SESSION.commit()
+insert_temperature(SESSION)
+insert_humidity(SESSION)
+insert_pressure(SESSION)
+insert_pm10(SESSION)
+insert_pm25(SESSION)
+insert_pm100(SESSION)
+SESSION.commit()

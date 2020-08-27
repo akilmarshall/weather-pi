@@ -1,9 +1,9 @@
 [Unit]
-Description=Update weather database with environmental readings every 5 minutes.
+Description=Update weather database with environmental readings every minute.
 
 [Timer]
-OnUnitActiveSec=300s
-OnBootSec=30s
+OnUnitActiveSec=60s
+OnBootSec=10s
 
 [Install]
 WantedBy=timers.target

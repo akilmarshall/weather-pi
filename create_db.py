@@ -3,7 +3,8 @@ from sqlalchemy import create_engine, MetaData, Table, Integer, Float, Column, D
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property, hybrid_method
 
-DB_PATH = 'mysql+pymysql://akil:junglepass@notserver/weather'
+# DB_PATH = 'mysql+pymysql://akil:junglepass@notserver/weather'
+DB_PATH = 'sqlite:////home/pi/weather-pi/weather.db'
 ENGINE = create_engine(DB_PATH, echo=True)
 BASE = declarative_base()
 
