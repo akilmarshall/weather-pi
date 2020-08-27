@@ -132,4 +132,4 @@ tags
 # Coc configuration directory
 .vim
 
-*.db
+weather.db
