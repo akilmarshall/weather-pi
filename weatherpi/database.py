@@ -3,8 +3,8 @@ from sqlalchemy import create_engine, MetaData, Table, Integer, Float, Column, D
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property, hybrid_method
-import bme280
-import PMS5003
+from . import bme280
+from . import PMS5003
 
 DB_PATH = 'sqlite:///weather2.db'
 ENGINE = create_engine(DB_PATH, echo=True)
