@@ -1,4 +1,8 @@
 import weatherpi
+from os.path import isfile
+
+if not isfile(weatherpi.database.DB_PATH):
+    weatherpi.database.create_database()
 
 weatherpi.database.insert_pm10()
 weatherpi.database.insert_pm25()
