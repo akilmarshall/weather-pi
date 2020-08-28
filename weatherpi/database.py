@@ -10,6 +10,7 @@ DB_PATH = 'sqlite:////home/pi/weather-pi/weather.db'
 ENGINE = create_engine(DB_PATH, echo=True)
 BASE = declarative_base()
 Session = sessionmaker(bind=ENGINE)
+session = Session()
 
 
 class Meta(BASE):
@@ -67,7 +68,6 @@ def create_database():
 
 
 def insert_temperature():
-    session = Session()
     t, _, _ = bme280.readBME280All()
     temp = Temperature(temperature=t)
     session.add(temp)
@@ -75,7 +75,6 @@ def insert_temperature():
 
 
 def insert_humidity():
-    session = Session()
     _, _, h = bme280.readBME280All()
     humidity = Humidity(humidity=h)
     session.add(humidity)
@@ -83,7 +82,6 @@ def insert_humidity():
 
 
 def insert_pressure():
-    session = Session()
     _, p, _ = bme280.readBME280All()
     pressure = Pressure(pressure=p)
     session.add(pressure)
@@ -91,7 +89,6 @@ def insert_pressure():
 
 
 def insert_pm10():
-    session = Session()
     particle_count = PMS5003.pm10_env if PMS5003.pm10_env is not None else -1
     pm10 = PM10(pm10=particle_count)
     session.add(pm10)
@@ -99,7 +96,6 @@ def insert_pm10():
 
 
 def insert_pm25():
-    session = Session()
     particle_count = PMS5003.pm25_env if PMS5003.pm25_env is not None else -1
     pm25 = PM25(pm25=particle_count)
     session.add(pm25)
@@ -107,8 +103,14 @@ def insert_pm25():
 
 
 def insert_pm100():
-    session = Session()
     particle_count = PMS5003.pm100_env if PMS5003.pm100_env is not None else -1
     pm100 = PM100(pm100=particle_count)
     session.add(pm100)
     session.commit()
+
+
+def get_all_temperatures():
+    result = session.query(Temperature).all()
+    print(type(result))
+    print(result)
+    print(type(result))
