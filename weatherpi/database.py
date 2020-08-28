@@ -6,7 +6,7 @@ from sqlalchemy.ext.hybrid import hybrid_property, hybrid_method
 from . import bme280
 from . import PMS5003
 
-DB_PATH = 'sqlite:///weather2.db'
+DB_PATH = 'sqlite:////home/pi/weather-pi/weather.db'
 ENGINE = create_engine(DB_PATH, echo=True)
 BASE = declarative_base()
 Session = sessionmaker(bind=ENGINE)
