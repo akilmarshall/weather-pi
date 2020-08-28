@@ -9,6 +9,6 @@ bme = {
     'temperature': temperature,
     'pressure': pressure,
     'humidity': humidity
-    }
+}
 
 pp.pprint(bme)

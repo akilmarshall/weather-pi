@@ -1,2 +1,4 @@
 # Weather Pi
-A rapsberry Pi that takes periodic environmental data and publishes to a databasee. This database serves the data over a REST API (see sandman2)
+A raspberry Pi that takes periodic environmental data and publishes to a database.
+
+The database contents will be offered via api as well as some simple data plots.
