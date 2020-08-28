@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import weatherpi
 from os.path import isfile
 

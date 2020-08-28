@@ -3,5 +3,5 @@ Description=Update the database with current weather measurements
 
 [Service]
 Type=simple
-ExecStart=/home/pi/weather-pi/update_database
+ExecStart=/home/pi/weather-pi/main.py
 User=pi
