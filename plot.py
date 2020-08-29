@@ -6,12 +6,11 @@ plt.style.use('seaborn')
 
 # get the time series data from the database
 
-# x = [None]
-# y = [None]
+foo = db.get_all_temperatures()
 
-print(x)
-print(y)
+dates = [a for a,_ in foo]
+temps = [(b*1.8) + 32 for _, b in foo]
 
-# plt.plot_date(x, y)
-# plt.tight_layout()
-# plt.show()
+plt.plot_date(dates, temps)
+plt.tight_layout()
+plt.savefig('plot.png')

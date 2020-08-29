@@ -111,6 +111,4 @@ def insert_pm100():
 
 def get_all_temperatures():
     result = session.query(Temperature).all()
-    print(type(result))
-    print(result)
-    print(type(result))
+    return [(x.date, x.temperature) for x in result]
