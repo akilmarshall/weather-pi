@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, jsonify
 from flask import render_template
 import json
@@ -6,7 +7,6 @@ import weatherpi.database as db
 
 
 app = Flask(__name__)
-
 
 
 @app.route("/all_temperatures", methods=['GET'])
