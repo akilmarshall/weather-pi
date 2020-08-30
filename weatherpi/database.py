@@ -112,3 +112,28 @@ def insert_pm100():
 def get_all_temperatures():
     result = session.query(Temperature).all()
     return [(x.date, x.temperature) for x in result]
+
+
+def get_all_humidities():
+    result = session.query(Humidity).all()
+    return [(x.date, x.humidity) for x in result]
+
+
+def get_all_pressures():
+    result = session.query(Pressure).all()
+    return [(x.date, x.pressure) for x in result]
+
+
+def get_all_pm10():
+    result = session.query(PM10).all()
+    return [(x.date, x.pm10) for x in result]
+
+
+def get_all_pm25():
+    result = session.query(PM25).all()
+    return [(x.date, x.pm25) for x in result]
+
+
+def get_all_pm100():
+    result = session.query(PM100).all()
+    return [(x.date, x.pm100) for x in result]
