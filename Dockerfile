@@ -1,6 +1,8 @@
 FROM python:3.7
 
-RUN pip install fastapi uvicorn
+COPY serve.py weatherpi/ ./
+
+RUN pip install fastapi uvicorn sqlalchemy
 
 EXPOSE 80
 
